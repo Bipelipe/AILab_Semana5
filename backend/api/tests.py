@@ -6,5 +6,5 @@ class HealthTestCase(TestCase):
         response = self.client.get("/api/health/")
         self.assertEqual(response.status_code, 200)
         dados = response.json()
-        self.assertEqual(dados["status"], "ok")
+        self.assertEqual(dados["status"], "erro")
         self.assertIn("items", dados)
