@@ -6,3 +6,4 @@ def health(request):
         "status": "ok",
         "items": ["Configurar Docker", "Automatizar CI", "Publicar no GHCR"]
     })
+import os
