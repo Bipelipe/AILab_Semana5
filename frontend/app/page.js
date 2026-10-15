@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { getApiUrl } from "../lib/api";
 
 export default function Home() {
   const [dados, setDados] = useState(null);
@@ -9,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "";
 
-    fetch(`${apiUrl}/api/health/`)
+    fetch(getApiUrl())
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
